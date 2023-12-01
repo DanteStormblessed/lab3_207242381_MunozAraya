@@ -3,7 +3,7 @@ package lab3Paradigmas;
 import java.util.ArrayList;
 /**
  *
- * @author alvar
+ * @author alvaro
  */
 public class Option {
     private int id;
