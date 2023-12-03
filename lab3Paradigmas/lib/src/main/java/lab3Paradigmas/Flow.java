@@ -11,7 +11,22 @@ public class Flow {
 	public Flow(int id, String message, ArrayList<Option> options){
 		this.id = id;
 		this.message = message;
-		this.options = new ArrayList<>(options);
+		this.options = new ArrayList<>();
+		for (Option option : options) {
+            boolean exists = false;
+            for (Option existingOption : this.options) {
+                if (existingOption.getId() == option.getId()) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (!exists) {
+                this.options.add(option);
+            } else {
+                System.out.println("El Option con ID " + option.getId() + " ya está en el flujo.");
+            }
+        }
+
 	}
 	
 	public int getId() {

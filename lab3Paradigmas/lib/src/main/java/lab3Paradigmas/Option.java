@@ -57,13 +57,12 @@ public class Option {
     }
     //OTROS
     public void printOptionDetails() {
-        System.out.println("Detalles de la opción:");
-        System.out.println("ID: " + getId());
+        System.out.println("Opcion ID: " + getId());
         System.out.println("Mensaje: " + getMessage());
-        System.out.println("Enlace al chatbot: " + getChatbotCodeLink());
-        System.out.println("Keywords:");
+        System.out.println("Chatbot code link: " + getChatbotCodeLink());
+        System.out.print("Keywords: ");
         for (String keyword : getKeywords()) {
-            System.out.println(keyword);
+            System.out.print(keyword + " ");
         }
     }
 

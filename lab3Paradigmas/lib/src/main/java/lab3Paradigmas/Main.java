@@ -4,6 +4,18 @@ import java.util.ArrayList;
 
 public class Main{
     public static void main(String[] args){
+    	
+    	/*ASI SE IMPRIMEN LOS ATRIBUTOS DE UNA OPCION EN EL MAIN, NO COMO METODO DE LA CLASE (EL OBJETO SE LLAMA option)
+        System.out.println("Detalles de la opción:");
+        System.out.println("ID: " + opcion.getId());
+        System.out.println("Mensaje: " + opcion.getMessage());
+        System.out.println("Enlace al chatbot: " + opcion.getChatbotCodeLink());
+        System.out.println("Keywords:");
+        for (String keyword : opcion.getKeywords()) {
+            System.out.println(keyword);
+        }
+    	*/
+    	//SE CREA UNA OPCION CON ID 1
         ArrayList<String> keywords = new ArrayList<>();
         keywords.add("keyword1");
         keywords.add("keyword2");
@@ -23,10 +35,19 @@ public class Main{
         Option otraOpcion = new Option(2, "Otro mensaje", 9876, keywords);
         flujo.FlowAddOption(otraOpcion); // Esto se añadirá al flujo porque el ID es diferente
         otraOpcion.printOptionDetails();
+        
+        
+        
         // Imprimir las opciones del flujo
-        System.out.println("\nOpciones en el flujo:");
-        for (Option option : flujo.getOptions()) {
-        	opcion.printOptionDetails();
+        System.out.print("\n-------------------------------------------------");
+        System.out.println("\nDatos de el flujo:");
+        System.out.println("ID del flujo:" + flujo.getId());
+        System.out.println("Mensaje del flujo:" + flujo.getMessage());
+        System.out.print("\n");
+        System.out.println("Opciones del flujo:");
+        for (Option opcion1 : flujo.getOptions()) {
+        	opcion1.printOptionDetails();
+        	System.out.println("\n");
         }
         
         
