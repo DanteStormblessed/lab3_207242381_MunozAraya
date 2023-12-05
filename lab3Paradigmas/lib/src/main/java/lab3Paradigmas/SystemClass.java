@@ -9,6 +9,26 @@ public class SystemClass {
 	ArrayList<User> registeredUsers;
 	ArrayList<User> activeUser;
 	
+	
+	public SystemClass(String name, int initialChatbotCodeLink, ArrayList<Chatbot> chatbots) {
+		this.name = name;
+		this.initialChatbotCodeLink = initialChatbotCodeLink;
+		for (Chatbot chatbot : chatbots) {
+            boolean exists = false;
+            for (Chatbot existingChatbot : this.chatbots) {
+                if (existingChatbot.getChatbotID() == chatbot.getChatbotID()) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (!exists) {
+                this.chatbots.add(chatbot);
+            } else {
+                System.out.println("El Chatbot con ID " + chatbot.getChatbotID() + " ya está en el Systema.");
+            }
+        }
+	}
+	
 	//CONSTRUCTOR DEL SISTEMA SIN INGRESAR UNA LISTA DE USUARIOS REGISTRADOS
 	public SystemClass(String name, int initialChatbotCodeLink, ArrayList<Chatbot> chatbots, ArrayList<User> activeUser) {
 		this.name = name;
@@ -106,6 +126,21 @@ public class SystemClass {
         }
     }
 	
+	public void systemAddUser(User newUser) {
+        boolean exists = false;
+        for (User existingUser : this.registeredUsers) {
+            if (existingUser.username.equals(newUser.username)) {
+                exists = true;
+                break;
+            }
+        }
+        if (!exists) {
+            this.registeredUsers.add(newUser);
+        } else {
+            System.out.println("El usuario " + newUser.username + " ya está en el Systema.");
+        }
+    }
+	
 	public void systemLogin(User newUser) {
 		if(activeUser.isEmpty()) {
 			activeUser.add(newUser);
@@ -114,6 +149,16 @@ public class SystemClass {
             System.out.println("El usuario " + newUser.username + " no puede logearse en el sistema, porque ya hay un usuario logeado.");
         }
     }
+	public void systemLogout() {
+		activeUser.clear();
+		System.out.println("Se ha deslogeado correctamente.");
+    }
 	
+	public void systemTalk(String message){
+		if(chatbots.isEmpty()) {
+			System.out.println("Se ha deslogeado correctamente.");
+		}
+						
+	}
 	
 }

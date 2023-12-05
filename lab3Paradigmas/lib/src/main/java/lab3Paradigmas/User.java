@@ -1,10 +1,12 @@
 package lab3Paradigmas;
 
+import java.util.ArrayList;
+
 public class User {
 	boolean admin;
 	String username;
 	String userPassword;
-	//Historial
+	ArrayList<ChatHistory> historial;
 	
 	
 	public User(String username, String userPassword) {
