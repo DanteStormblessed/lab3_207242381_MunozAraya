@@ -31,6 +31,8 @@ public class Chatbot {
             }
         }
 	}
+	public Chatbot() {
+	}
 	
 	//getters y setters
 	public int getChatbotID() {

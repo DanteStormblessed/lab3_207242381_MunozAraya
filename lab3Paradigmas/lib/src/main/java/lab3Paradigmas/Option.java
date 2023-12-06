@@ -10,20 +10,23 @@ public class Option {
     int id;
     String message;
     int chatbotCodeLink;
+    int initialFlowCodeLink;
     ArrayList<String> keywords;
 
     //Constructor
-    public Option(int id, String message, int chatbotCodeLink, ArrayList<String> keywords) {
+    public Option(int id, String message, int chatbotCodeLink, ArrayList<String> keywords, int initialFlowCodeLink) {
         this.id = id;
         this.message = message;
         this.chatbotCodeLink = chatbotCodeLink;
+        this.initialFlowCodeLink = initialFlowCodeLink;
         this.keywords = new ArrayList<>(keywords); 
     }
     //Constructor en caso de que no se agreguen keywords
-    public Option(int id, String message, int chatbotCodeLink) {
+    public Option(int id, String message, int chatbotCodeLink, int initialFlowCodeLink) {
         this.id = id;
         this.message = message;
         this.chatbotCodeLink = chatbotCodeLink;
+        this.initialFlowCodeLink = initialFlowCodeLink; 
         this.keywords = new ArrayList<>(); 
     }
 
@@ -32,16 +35,13 @@ public class Option {
         return id;
     }
 
-
     public String getMessage() {
         return message;
     }
 
-
     public int getChatbotCodeLink() {
         return chatbotCodeLink;
     }
-
 
     public ArrayList<String> getKeywords() {
         return new ArrayList<>(keywords);
@@ -55,7 +55,15 @@ public class Option {
     public void setMessage(String newMessage) {
         this.message = newMessage;
     }
-    //OTROS
+    
+    
+    public int getInitialFlowCodeLink() {
+		return initialFlowCodeLink;
+	}
+	public void setInitialFlowCodeLink(int initialFlowCodeLink) {
+		this.initialFlowCodeLink = initialFlowCodeLink;
+	}
+	//OTROS
     public void printOptionDetails() {
         System.out.println("Opcion ID: " + getId());
         System.out.println("Mensaje: " + getMessage());
@@ -64,6 +72,9 @@ public class Option {
         for (String keyword : getKeywords()) {
             System.out.print(keyword + " ");
         }
+    }
+    public void printOption() {
+        System.out.println(getMessage());   	
     }
 
 

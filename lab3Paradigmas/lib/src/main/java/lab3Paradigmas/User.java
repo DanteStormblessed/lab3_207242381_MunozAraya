@@ -1,22 +1,22 @@
 package lab3Paradigmas;
 
-import java.util.ArrayList;
 
 public class User {
 	boolean admin;
 	String username;
 	String userPassword;
-	ArrayList<ChatHistory> historial;
+	ChatHistory historial;
 	
 	
-	public User(String username, String userPassword) {
+	public User(String username, String userPassword, ChatHistory historial) {
         this.admin = false; // Por defecto, cada nuevo usuario no será admin
         this.username = username;
         this.userPassword = userPassword;
+        this.historial = historial;
     }
 	
 	// Otro constructor que permite especificar el estado de admin al crear el usuario
-	public User(String username, String userPassword, boolean admin) {
+	public User(String username, String userPassword, boolean admin, ChatHistory historial) {
         this.admin = admin;
         this.username = username;
         this.userPassword = userPassword;
@@ -25,6 +25,7 @@ public class User {
 	
 	
 	//GETTERS Y SETTERS
+	
 	public boolean isAdmin() {
 		return admin;
 	}
@@ -47,6 +48,14 @@ public class User {
 
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
+	}
+
+	public ChatHistory getHistorial() {
+		return historial;
+	}
+
+	public void setHistorial(ChatHistory historial) {
+		this.historial = historial;
 	}
 	
 	

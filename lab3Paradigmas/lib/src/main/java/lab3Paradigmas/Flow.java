@@ -29,6 +29,10 @@ public class Flow {
 
 	}
 	
+	public Flow(){
+
+	}
+	
 	public int getId() {
         return id;
     }
@@ -67,4 +71,5 @@ public class Flow {
             System.out.println("El Option con ID " + newOption.getId() + " ya está en el flujo.");
         }
     }
+    
 }

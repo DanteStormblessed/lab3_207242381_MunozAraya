@@ -10,20 +10,19 @@ public class ChatHistory {
 		this.usuario = usuario;
 		this.messages = messages;
 	}
-
 	public User getUsuario() {
 		return usuario;
 	}
-
 	public void setUsuario(User usuario) {
 		this.usuario = usuario;
 	}
-
 	public ArrayList<Message> getMessages() {
 		return messages;
 	}
-
 	public void setMessages(ArrayList<Message> messages) {
 		this.messages = messages;
 	}
+	
+	
+	
 }

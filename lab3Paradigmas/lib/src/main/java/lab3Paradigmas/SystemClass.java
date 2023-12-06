@@ -111,6 +111,32 @@ public class SystemClass {
 		this.chatbots = chatbots;
 	}
 	
+	
+	public ArrayList<User> getRegisteredUsers() {
+		return registeredUsers;
+	}
+
+	public void setRegisteredUsers(ArrayList<User> registeredUsers) {
+		this.registeredUsers = registeredUsers;
+	}
+
+	public ArrayList<User> getActiveUser() {
+		return activeUser;
+	}
+	
+	public User obtenerPrimerUsuarioActivo() {
+        if (activeUser != null && !activeUser.isEmpty()) {
+            return activeUser.get(0);
+        } else {
+            System.out.println("No hay usuarios activos en este momento.");
+            return null;
+        }
+    }
+
+	public void setActiveUser(ArrayList<User> activeUser) {
+		this.activeUser = activeUser;
+	}
+
 	public void systemAddChatbot(Chatbot newChatbot) {
         boolean exists = false;
         for (Chatbot chatbot : chatbots) {
@@ -155,9 +181,63 @@ public class SystemClass {
     }
 	
 	public void systemTalk(String message){
-		if(chatbots.isEmpty()) {
-			System.out.println("Se ha deslogeado correctamente.");
-		}
+		User activeUser = obtenerPrimerUsuarioActivo();
+        ChatHistory historial = activeUser.getHistorial();
+            if (historial != null) {
+                ArrayList<Message> messages = historial.getMessages();
+                if (messages != null && !messages.isEmpty()) {
+                    Message ultimoMensaje = messages.get(messages.size() - 1); // Obtiene el último mensaje
+                    int newIDChatbot = ultimoMensaje.getChatbotID();
+                    int newIDFlow = ultimoMensaje.getFlowID();
+                    Chatbot chatbotActual = new Chatbot();
+                    for (Chatbot chatbot : chatbots) {
+                    	if(chatbot.getChatbotID() == newIDChatbot) {
+                    		chatbotActual = chatbot;
+                    	}
+                    }
+                    ArrayList<Flow> flowsDelCBActual = chatbotActual.getFlows();
+                    Flow flowActual = new Flow();
+                    for (Flow flow : flowsDelCBActual) {
+                    	if(flow.getId() == newIDFlow) {
+                    		flowActual = flow;
+                    	}
+                    }
+                    ArrayList<Option> OpcionesActuales = flowActual.getOptions();
+                    
+                    System.out.println(chatbotActual.getWelcomeMessage());
+                    System.out.println(flowActual.getMessage());
+                    for (Option option : OpcionesActuales) {
+                    	System.out.println(option.getId()+ ") " + option.getMessage());
+                    }
+                    
+                    try {
+                        int numeroComoEntero = Integer.parseInt(message);
+                        for (Option option : OpcionesActuales) {
+                        	if(numeroComoEntero == option.getId()) {
+                        		//Message newMessage = new Message(String mensaje, int chatbotID, int flowID, int opcionID);
+                        		//messages.add();
+                        	}
+                        }
+                        
+                    } catch (NumberFormatException e) {
+                        System.out.println("Mensaje ingresado no es numerico, buscando segun palabras clave...");
+                    }
+
+                  
+                    
+                    
+                } else {
+                	
+                	
+                	
+                	
+                    System.out.println("El historial de mensajes está vacío.");
+                }
+            } else {
+                System.out.println("No se ha encontrado historial de chat para el usuario activo.");
+            }
+
+
 						
 	}
 	
