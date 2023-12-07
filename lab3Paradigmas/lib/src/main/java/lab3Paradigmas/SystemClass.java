@@ -13,6 +13,9 @@ public class SystemClass {
 	public SystemClass(String name, int initialChatbotCodeLink, ArrayList<Chatbot> chatbots) {
 		this.name = name;
 		this.initialChatbotCodeLink = initialChatbotCodeLink;
+		this.chatbots = new ArrayList<>();
+		this.registeredUsers = new ArrayList<>();
+		this.activeUser = new ArrayList<>();
 		for (Chatbot chatbot : chatbots) {
             boolean exists = false;
             for (Chatbot existingChatbot : this.chatbots) {
@@ -34,6 +37,7 @@ public class SystemClass {
 		this.name = name;
 		this.initialChatbotCodeLink = initialChatbotCodeLink;	
 		this.chatbots = new ArrayList<>();
+		this.registeredUsers = new ArrayList<>();
 		this.activeUser = new ArrayList<>();
 		for (Chatbot chatbot : chatbots) {
             boolean exists = false;
@@ -214,12 +218,26 @@ public class SystemClass {
                         int numeroComoEntero = Integer.parseInt(message);
                         for (Option option : OpcionesActuales) {
                         	if(numeroComoEntero == option.getId()) {
-                        		//Message newMessage = new Message(String mensaje, int chatbotID, int flowID, int opcionID);
-                        		//messages.add();
+                        		String numeroComoString = String.valueOf(numeroComoEntero);
+                        		int flowNextID = option.getInitialFlowCodeLink();
+                        		int ChatbotNextID = option.getChatbotCodeLink();
+                        		Message newMessage = new Message(numeroComoString, ChatbotNextID, flowNextID, numeroComoEntero);
+                        		messages.add(newMessage);
                         	}
                         }
                         
                     } catch (NumberFormatException e) {
+                    	for (Option option : OpcionesActuales) {
+                        	String messageActual = option.getMessage();
+                    		if(message.equals(messageActual)) {
+                        		int optionNextID = option.getId();
+                        		int flowNextID = option.getInitialFlowCodeLink();
+                        		int ChatbotNextID = option.getChatbotCodeLink();
+                        		Message newMessage = new Message(message, ChatbotNextID, flowNextID, optionNextID);
+                        		messages.add(newMessage);
+                        	}
+                        }
+                    	
                         System.out.println("Mensaje ingresado no es numerico, buscando segun palabras clave...");
                     }
 

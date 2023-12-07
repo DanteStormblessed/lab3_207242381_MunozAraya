@@ -16,6 +16,7 @@ public class Message {
         this.chatbotID = chatbotID;
         this.flowID = flowID;
         this.opcionID = opcionID;
+        this.fecha = new ArrayList<>();
         this.fecha = getFecha(); // Llama al método getFecha en el constructor para obtener la fecha actual
     }
 

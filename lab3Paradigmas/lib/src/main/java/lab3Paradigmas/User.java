@@ -8,15 +8,14 @@ public class User {
 	ChatHistory historial;
 	
 	
-	public User(String username, String userPassword, ChatHistory historial) {
+	public User(String username, String userPassword) {
         this.admin = false; // Por defecto, cada nuevo usuario no será admin
         this.username = username;
         this.userPassword = userPassword;
-        this.historial = historial;
     }
 	
 	// Otro constructor que permite especificar el estado de admin al crear el usuario
-	public User(String username, String userPassword, boolean admin, ChatHistory historial) {
+	public User(String username, String userPassword, boolean admin) {
         this.admin = admin;
         this.username = username;
         this.userPassword = userPassword;

@@ -80,8 +80,8 @@ public class Main{
         }
         */
         //__________________________________________________________________________________________________________________//
-        Option opcion = new Option(1, "Chatear con un chatbot", 1234);
-        opcion.addKeywords("chatear, Chatear, Chatbot");
+        Option opcion = new Option(1, "Hola", 1, 1);
+        opcion.addKeywords("Hola, hola, Hello");
     	
     	ArrayList<Option> opciones = new ArrayList<>();
         opciones.add(opcion);
@@ -95,7 +95,11 @@ public class Main{
         ArrayList<Chatbot> chatbots = new ArrayList<>();
         chatbots.add(chatbot1);
         
-    	SystemClass sistema = new SystemClass("sistema", 1, chatbots);
+    	SystemClass sistema1 = new SystemClass("sistema", 1, chatbots);
+    	//______________
+    	Message mensajeIni = new Message("Hola", 1, 1, 1);
+    	ArrayList<Message> mensajesIni = new ArrayList<>();
+    	mensajesIni.add(mensajeIni);
         /*
     	Scanner scanner = new Scanner(System.in);
         int opcion1;
@@ -175,5 +179,64 @@ public class Main{
 
         scanner.close();
         */
-    }
+    
+
+	    Scanner scanner = new Scanner(System.in);
+	    int opcionMenu1;
+	
+	    do {
+	        // Mostrar el menú
+	        System.out.println("\n### Sistema de Chatbots - Inicio ###");
+	        System.out.println("1. Login de Usuario");
+	        System.out.println("2. Registro de Usuario");
+	        System.out.print("Seleccione una opción: ");
+	        
+	        // Leer la opción ingresada por el usuario
+	        opcionMenu1 = scanner.nextInt();
+	        scanner.nextLine();
+	        
+	        
+	        switch (opcionMenu1) {
+	            case 1:
+	            	
+	                break;
+	            case 2:
+	        	    int opcionMenu2;
+	        	    do {
+	        	        // Mostrar el menú
+	        	        System.out.println("\n### Sistema de Chatbots - Inicio ###");
+	        	        System.out.println("1. Registrar usuario normal");
+	        	        System.out.println("2. Registrar usuario administrador");
+	        	        System.out.print("Seleccione una opción: ");
+	        	        
+	        	        // Leer la opción ingresada por el usuario
+	        	        opcionMenu2 = scanner.nextInt();
+	        	        scanner.nextLine();
+	        	        switch (opcionMenu2) {
+	        	            case 1:
+	        	            	
+	        	                break;
+	        	            case 2:
+	        	            	System.out.print("Ingrese el nombre del usuario: ");
+	                            String username = scanner.nextLine();
+	                            System.out.print("Ingrese la constraseña: ");
+	                            String userPassword = scanner.nextLine();
+	        	            	User newUser = new User(username, userPassword, true);
+	        	            	ChatHistory chathistory = new ChatHistory(newUser,  mensajesIni);
+	        	            	newUser.setHistorial(chathistory);
+	        	            	sistema1.systemAddUser(newUser);
+	        	                break;
+	        	            default:
+	        	                System.out.println("Opción no válida. Por favor, selecciona una opción válida.");
+	        	                break;
+	        	        }
+	        	    } while (opcionMenu2 != 1  || opcionMenu2 != 2);
+	                break;
+	            default:
+	                System.out.println("Opción no válida. Por favor, selecciona una opción válida.");
+	                break;
+	        }
+	    } while (opcionMenu1 != 1);
+	    scanner.close();
+	}
 }
