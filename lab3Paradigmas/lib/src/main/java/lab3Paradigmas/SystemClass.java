@@ -181,7 +181,6 @@ public class SystemClass {
     }
 	public void systemLogout() {
 		activeUser.clear();
-		System.out.println("Se ha deslogeado correctamente.");
     }
 	
 	public void systemTalk(String message){
