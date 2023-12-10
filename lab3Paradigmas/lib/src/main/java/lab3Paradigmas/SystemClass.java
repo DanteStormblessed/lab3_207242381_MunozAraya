@@ -186,68 +186,85 @@ public class SystemClass {
 	public void systemTalk(String message){
 		User activeUser = obtenerPrimerUsuarioActivo();
         ChatHistory historial = activeUser.getHistorial();
-            if (historial != null) {
-                ArrayList<Message> messages = historial.getMessages();
-                if (messages != null && !messages.isEmpty()) {
-                    Message ultimoMensaje = messages.get(messages.size() - 1); // Obtiene el último mensaje
-                    int newIDChatbot = ultimoMensaje.getChatbotID();
-                    int newIDFlow = ultimoMensaje.getFlowID();
-                    Chatbot chatbotActual = new Chatbot();
-                    for (Chatbot chatbot : chatbots) {
-                    	if(chatbot.getChatbotID() == newIDChatbot) {
-                    		chatbotActual = chatbot;
-                    	}
-                    }
-                    ArrayList<Flow> flowsDelCBActual = chatbotActual.getFlows();
-                    Flow flowActual = new Flow();
-                    for (Flow flow : flowsDelCBActual) {
-                    	if(flow.getId() == newIDFlow) {
-                    		flowActual = flow;
-                    	}
-                    }
-                    ArrayList<Option> OpcionesActuales = flowActual.getOptions();
-                    
-                    System.out.println(chatbotActual.getWelcomeMessage());
-                    System.out.println(flowActual.getMessage());
-                    for (Option option : OpcionesActuales) {
-                    	System.out.println(option.getId()+ ") " + option.getMessage());
-                    }
-                    
-                    try {
-                        int numeroComoEntero = Integer.parseInt(message);
-                        for (Option option : OpcionesActuales) {
-                        	if(numeroComoEntero == option.getId()) {
-                        		String numeroComoString = String.valueOf(numeroComoEntero);
-                        		int flowNextID = option.getInitialFlowCodeLink();
-                        		int ChatbotNextID = option.getChatbotCodeLink();
-                        		Message newMessage = new Message(numeroComoString, ChatbotNextID, flowNextID, numeroComoEntero);
-                        		messages.add(newMessage);
-                        	}
-                        }
-                        
-                    } catch (NumberFormatException e) {
-                    	for (Option option : OpcionesActuales) {
-                        	String messageActual = option.getMessage();
-                    		if(message.equals(messageActual)) {
-                        		int optionNextID = option.getId();
-                        		int flowNextID = option.getInitialFlowCodeLink();
-                        		int ChatbotNextID = option.getChatbotCodeLink();
-                        		Message newMessage = new Message(message, ChatbotNextID, flowNextID, optionNextID);
-                        		messages.add(newMessage);
-                        	}
-                        }
-                    	
-                        System.out.println("Mensaje ingresado no es numerico, buscando segun palabras clave...");
-                    }    
-                } else {
-                    System.out.println("El historial de mensajes está vacío.");
-                }
-            } else {
-                System.out.println("No se ha encontrado historial de chat para el usuario activo.");
+        ArrayList<Message> messages = historial.getMessages();
+        
+
+        Message ultimoMensaje = messages.get(messages.size() - 1); // Obtiene el último mensaje
+        int newIDChatbot = ultimoMensaje.getChatbotID();
+        int newIDFlow = ultimoMensaje.getFlowID();
+        Chatbot chatbotActual = new Chatbot();
+        for (Chatbot chatbot : chatbots) {
+        	if(chatbot.getChatbotID() == newIDChatbot) {
+        		chatbotActual = chatbot;
+        	}
+        }
+        ArrayList<Flow> flowsDelCBActual = chatbotActual.getFlows();
+        Flow flowActual = new Flow();
+        for (Flow flow : flowsDelCBActual) {
+        	if(flow.getId() == newIDFlow) {
+        		flowActual = flow;
+        	}
+        }
+        ArrayList<Option> OpcionesActuales = flowActual.getOptions();
+        
+        
+        
+        try {
+            int numeroComoEntero = Integer.parseInt(message);
+            for (Option option : OpcionesActuales) {
+            	if(numeroComoEntero == option.getId()) {
+            		String messageActual = option.getMessage();
+            		int flowNextID = option.getInitialFlowCodeLink();
+            		int ChatbotNextID = option.getChatbotCodeLink();
+            		Message newMessage = new Message(messageActual, ChatbotNextID, flowNextID, numeroComoEntero);
+            		messages.add(newMessage);
+            	}
             }
+            
+        } catch (NumberFormatException e) {
+        	for (Option option : OpcionesActuales) {
+            	String messageActual = option.getMessage();
+        		if(message.equals(messageActual)) {
+            		int optionNextID = option.getId();
+            		int flowNextID = option.getInitialFlowCodeLink();
+            		int ChatbotNextID = option.getChatbotCodeLink();
+            		Message newMessage = new Message(messageActual, ChatbotNextID, flowNextID, optionNextID);
+            		messages.add(newMessage);
+            	}
+            }
+        	
+            System.out.println("Mensaje ingresado no es numerico, buscando segun palabras clave...");
+        }
+     
+        activeUser = obtenerPrimerUsuarioActivo();
+        historial = activeUser.getHistorial();
+        messages = historial.getMessages();
+        
 
-
-						
+        ultimoMensaje = messages.get(messages.size() - 1); // Obtiene el último mensaje
+        newIDChatbot = ultimoMensaje.getChatbotID();
+        newIDFlow = ultimoMensaje.getFlowID();
+        chatbotActual = new Chatbot();
+        for (Chatbot chatbot : chatbots) {
+        	if(chatbot.getChatbotID() == newIDChatbot) {
+        		chatbotActual = chatbot;
+        	}
+        }
+        flowsDelCBActual = chatbotActual.getFlows();
+        flowActual = new Flow();
+        for (Flow flow : flowsDelCBActual) {
+        	if(flow.getId() == newIDFlow) {
+        		flowActual = flow;
+        	}
+        }
+        OpcionesActuales = flowActual.getOptions();
+        
+      //aqui se imprime el ultimo mensaje
+        System.out.println(chatbotActual.getWelcomeMessage());
+        System.out.println(flowActual.getMessage());
+        for (Option option : OpcionesActuales) {
+        	System.out.println(option.getId()+ ") " + option.getMessage());
+        }
+             				
 	}
-	
 }

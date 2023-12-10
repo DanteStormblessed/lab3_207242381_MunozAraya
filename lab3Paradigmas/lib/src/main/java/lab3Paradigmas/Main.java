@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
+    	
+	
         Option opcion = new Option(1, "Hola", 1, 2);
         opcion.addKeywords("Hola, hola, Hello");
     	ArrayList<Option> opciones = new ArrayList<>();
@@ -35,55 +37,20 @@ public class Main{
     	Flow flujo2 = new Flow(2, "Escribe cualquier cosa para empezar a chatear", opciones2);
         chatbot1.ChatbotAddFlow(flujo2);
 	    
+        User admin = new User("admin","admin", true);
+        ChatHistory chatHistoryAdmin = new ChatHistory(admin,mensajesIni); 
+        admin.setHistorial(chatHistoryAdmin);
+        sistema1.systemAddUser(admin);
     	
     	
     	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
+
     	
     	Scanner scanner = new Scanner(System.in);
 	    int opcionMenu1;
 	    do {
 	        System.out.println("\n### Sistema de Chatbots - Inicio ###");
+	        System.out.println("(Usuario administrador-> nombre: admin password: admin)");
 	        System.out.println("1. Login de Usuario");
 	        System.out.println("2. Registro de Usuario");
 	        System.out.print("Seleccione una opción: ");
@@ -329,9 +296,7 @@ public class Main{
                         scanner.nextLine();
                         if(opcion2 >= 0 && opcion2 < k) {
                         	boolean salir = false;
-                        	sistema1.systemTalk("Hola");
                         	do {
-                        		
                         		String mensajeRespuesta;
         	        	        System.out.println("Respuesta:");
         	        	        mensajeRespuesta = scanner.nextLine();
