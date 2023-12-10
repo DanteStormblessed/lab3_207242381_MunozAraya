@@ -238,16 +238,8 @@ public class SystemClass {
                         }
                     	
                         System.out.println("Mensaje ingresado no es numerico, buscando segun palabras clave...");
-                    }
-
-                  
-                    
-                    
+                    }    
                 } else {
-                	
-                	
-                	
-                	
                     System.out.println("El historial de mensajes está vacío.");
                 }
             } else {

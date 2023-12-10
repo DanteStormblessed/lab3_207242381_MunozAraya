@@ -30,6 +30,7 @@ public class Flow {
 	}
 	
 	public Flow(){
+		this.options = new ArrayList<>();
 
 	}
 	
