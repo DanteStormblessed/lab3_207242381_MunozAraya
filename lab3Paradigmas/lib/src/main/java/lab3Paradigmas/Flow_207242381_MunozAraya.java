@@ -2,19 +2,17 @@ package lab3Paradigmas;
 
 import java.util.ArrayList;
 
-public class Flow {
-	int id;
-	String message;
-	ArrayList<Option> options;
+public class Flow_207242381_MunozAraya extends Identificador_207242381_MunozAraya {
+	ArrayList<Option_207242381_MunozAraya> options;
 	
 	//constructor del TDA flow
-	public Flow(int id, String message, ArrayList<Option> options){
+	public Flow_207242381_MunozAraya(int id, String message, ArrayList<Option_207242381_MunozAraya> options){
 		this.id = id;
 		this.message = message;
 		this.options = new ArrayList<>();
-		for (Option option : options) {
+		for (Option_207242381_MunozAraya option : options) {
             boolean exists = false;
-            for (Option existingOption : this.options) {
+            for (Option_207242381_MunozAraya existingOption : this.options) {
                 if (existingOption.getId() == option.getId()) {
                     exists = true;
                     break;
@@ -29,7 +27,7 @@ public class Flow {
 
 	}
 	
-	public Flow(){
+	public Flow_207242381_MunozAraya(){
 		this.options = new ArrayList<>();
 
 	}
@@ -50,17 +48,17 @@ public class Flow {
         this.message = message;
     }
 
-    public ArrayList<Option> getOptions() {
+    public ArrayList<Option_207242381_MunozAraya> getOptions() {
         return new ArrayList<>(options);
     }
 
-    public void setOptions(ArrayList<Option> options) {
+    public void setOptions(ArrayList<Option_207242381_MunozAraya> options) {
         this.options = new ArrayList<>(options);
     }
     //MODIFICADOR
-    public void FlowAddOption(Option newOption) {
+    public void FlowAddOption(Option_207242381_MunozAraya newOption) {
         boolean exists = false;
-        for (Option option : options) {
+        for (Option_207242381_MunozAraya option : options) {
             if (option.getId() == newOption.getId()) {
                 exists = true;
                 break;

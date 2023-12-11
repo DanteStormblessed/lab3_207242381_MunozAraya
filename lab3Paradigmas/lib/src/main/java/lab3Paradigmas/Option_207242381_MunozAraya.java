@@ -4,17 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 /**
  *
- * @author alvaro
+ * @author Alvaro Muñoz Araya
  */
-public class Option {
-    int id;
-    String message;
+public class Option_207242381_MunozAraya extends Identificador_207242381_MunozAraya{
     int chatbotCodeLink;
     int initialFlowCodeLink;
     ArrayList<String> keywords;
 
     //Constructor
-    public Option(int id, String message, int chatbotCodeLink, ArrayList<String> keywords, int initialFlowCodeLink) {
+    public Option_207242381_MunozAraya(int id, String message, int chatbotCodeLink, ArrayList<String> keywords, int initialFlowCodeLink) {
         this.id = id;
         this.message = message;
         this.chatbotCodeLink = chatbotCodeLink;
@@ -22,7 +20,7 @@ public class Option {
         this.keywords = new ArrayList<>(keywords); 
     }
     //Constructor en caso de que no se agreguen keywords
-    public Option(int id, String message, int chatbotCodeLink, int initialFlowCodeLink) {
+    public Option_207242381_MunozAraya(int id, String message, int chatbotCodeLink, int initialFlowCodeLink) {
         this.id = id;
         this.message = message;
         this.chatbotCodeLink = chatbotCodeLink;
@@ -76,6 +74,4 @@ public class Option {
     public void printOption() {
         System.out.println(getMessage());   	
     }
-
-
 }

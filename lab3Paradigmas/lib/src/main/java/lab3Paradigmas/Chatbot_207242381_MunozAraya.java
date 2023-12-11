@@ -2,23 +2,20 @@ package lab3Paradigmas;
 
 import java.util.ArrayList;
 
-public class Chatbot {
-	//Atributos
-	int chatbotID;
+public class Chatbot_207242381_MunozAraya extends Identificador_207242381_MunozAraya {
 	String name;
-	String welcomeMessage;
 	int startFlowId;
-	ArrayList<Flow> flows;
+	ArrayList<Flow_207242381_MunozAraya> flows;
 	//constructor
-	public Chatbot(int chatbotID, String name, String welcomeMessage, int startFlowId, ArrayList<Flow> flows) {
-		this.chatbotID = chatbotID;
+	public Chatbot_207242381_MunozAraya(int chatbotID, String name, String welcomeMessage, int startFlowId, ArrayList<Flow_207242381_MunozAraya> flows) {
+		this.id = chatbotID;
 		this.name = name;
-		this.welcomeMessage = welcomeMessage;
+		this.message = welcomeMessage;
 		this.startFlowId = startFlowId;
 		this.flows = new ArrayList<>();
-		for (Flow flow : flows) {
+		for (Flow_207242381_MunozAraya flow : flows) {
             boolean exists = false;
-            for (Flow existingFlow : this.flows) {
+            for (Flow_207242381_MunozAraya existingFlow : this.flows) {
                 if (existingFlow.getId() == flow.getId()) {
                     exists = true;
                     break;
@@ -31,15 +28,16 @@ public class Chatbot {
             }
         }
 	}
-	public Chatbot() {
+	public Chatbot_207242381_MunozAraya() {
+		this.flows = new ArrayList<>();
 	}
 	
 	//getters y setters
 	public int getChatbotID() {
-		return chatbotID;
+		return id;
 	}
 	public void setChatbotID(int chatbotID) {
-		this.chatbotID = chatbotID;
+		this.id = chatbotID;
 	}
 	public String getName() {
 		return name;
@@ -48,10 +46,10 @@ public class Chatbot {
 		this.name = name;
 	}
 	public String getWelcomeMessage() {
-		return welcomeMessage;
+		return message;
 	}
 	public void setWelcomeMessage(String welcomeMessage) {
-		this.welcomeMessage = welcomeMessage;
+		this.message = welcomeMessage;
 	}
 	public int getStartFlowId() {
 		return startFlowId;
@@ -59,15 +57,15 @@ public class Chatbot {
 	public void setStartFlowId(int startFlowId) {
 		this.startFlowId = startFlowId;
 	}
-	public ArrayList<Flow> getFlows() {
+	public ArrayList<Flow_207242381_MunozAraya> getFlows() {
 		return flows;
 	}
-	public void setFlows(ArrayList<Flow> flows) {
+	public void setFlows(ArrayList<Flow_207242381_MunozAraya> flows) {
 		this.flows = flows;
 	}
-	public void ChatbotAddFlow(Flow newFlow) {
+	public void ChatbotAddFlow(Flow_207242381_MunozAraya newFlow) {
         boolean exists = false;
-        for (Flow flow : flows) {
+        for (Flow_207242381_MunozAraya flow : flows) {
             if (flow.getId() == newFlow.getId()) {
                 exists = true;
                 break;

@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-public class Message {
+public class Message_207242381_MunozAraya {
     String mensaje;
     ArrayList<Integer> fecha;
     int chatbotID;
     int flowID;
     int opcionID;
 
-    public Message(String mensaje, int chatbotID, int flowID, int opcionID) {
+    public Message_207242381_MunozAraya(String mensaje, int chatbotID, int flowID, int opcionID) {
         this.mensaje = mensaje;
         this.chatbotID = chatbotID;
         this.flowID = flowID;

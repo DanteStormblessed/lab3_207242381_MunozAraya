@@ -1,26 +1,28 @@
 package lab3Paradigmas;
 
 
-public class User {
+public class User_207242381_MunozAraya {
 	boolean admin;
 	String username;
 	String userPassword;
-	ChatHistory historial;
+	ChatHistory_207242381_MunozAraya historial;
 	
 	
-	public User(String username, String userPassword) {
+	public User_207242381_MunozAraya(String username, String userPassword) {
         this.admin = false; // Por defecto, cada nuevo usuario no será admin
         this.username = username;
         this.userPassword = userPassword;
     }
 	
 	// Otro constructor que permite especificar el estado de admin al crear el usuario
-	public User(String username, String userPassword, boolean admin) {
+	public User_207242381_MunozAraya(String username, String userPassword, boolean admin) {
         this.admin = admin;
         this.username = username;
         this.userPassword = userPassword;
     }
 	
+	public User_207242381_MunozAraya() {
+    }
 	
 	
 	//GETTERS Y SETTERS
@@ -49,11 +51,11 @@ public class User {
 		this.userPassword = userPassword;
 	}
 
-	public ChatHistory getHistorial() {
+	public ChatHistory_207242381_MunozAraya getHistorial() {
 		return historial;
 	}
 
-	public void setHistorial(ChatHistory historial) {
+	public void setHistorial(ChatHistory_207242381_MunozAraya historial) {
 		this.historial = historial;
 	}
 	

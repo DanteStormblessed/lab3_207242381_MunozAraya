@@ -1,5 +1,6 @@
 package lab3Paradigmas;
 
-public class Identificador_207242381_MunozAraya {
-
+public abstract class Identificador_207242381_MunozAraya {
+	int id;
+	String message;
 }
