@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args){
-    	
-	
         Option_207242381_MunozAraya opcion = new Option_207242381_MunozAraya(1, "Hola", 1, 2);
         opcion.addKeywords("Hola, hola, Hello");
     	ArrayList<Option_207242381_MunozAraya> opciones = new ArrayList<>();
@@ -21,7 +19,7 @@ public class Main{
     	Message_207242381_MunozAraya mensajeIni = new Message_207242381_MunozAraya("Hola", 1, 1, 2);
     	ArrayList<Message_207242381_MunozAraya> mensajesIni = new ArrayList<>();
     	mensajesIni.add(mensajeIni);
-    	
+
     	Option_207242381_MunozAraya opcion2_1 = new Option_207242381_MunozAraya(1, "Buscar peliculas", 1, 3);
         opcion2_1.addKeywords("Peliculas", "peliculas", "pelis");
         Option_207242381_MunozAraya opcion2_2 = new Option_207242381_MunozAraya(2, "Buscar Juegos", 1, 4);
@@ -37,48 +35,133 @@ public class Main{
     	Flow_207242381_MunozAraya flujo2 = new Flow_207242381_MunozAraya(2, "¿Que deseas hacer?", opciones2);
         chatbot1.ChatbotAddFlow(flujo2);
 	    
-        Option_207242381_MunozAraya opcion3_1 = new Option_207242381_MunozAraya(1, "Terror", 1, 3);
+
+        Option_207242381_MunozAraya opcion3_1 = new Option_207242381_MunozAraya(1, "Terror", 1, 8);
         opcion3_1.addKeywords("Miedo", "Terror", "Horror");
-        Option_207242381_MunozAraya opcion3_2 = new Option_207242381_MunozAraya(2, "Fantasia", 1, 3);
+        Option_207242381_MunozAraya opcion3_2 = new Option_207242381_MunozAraya(2, "Fantasia", 1, 9);
         opcion3_2.addKeywords("fantasia", "medieval", "magia");
-        Option_207242381_MunozAraya opcion3_3 = new Option_207242381_MunozAraya(3, "Ciencia Ficcion", 1, 3);
+        Option_207242381_MunozAraya opcion3_3 = new Option_207242381_MunozAraya(3, "Ciencia Ficcion", 1, 10);
         opcion3_3.addKeywords("Ciencia", "Ficcion", "futuristica");
         Option_207242381_MunozAraya opcion3_4 = new Option_207242381_MunozAraya(4, "Volver", 1, 2);
         opcion3_4.addKeywords("Volver", "volver", "anterior");
-        
         ArrayList<Option_207242381_MunozAraya> opciones3 = new ArrayList<>();
         opciones3.add(opcion3_1);
         opciones3.add(opcion3_2);
         opciones3.add(opcion3_3);
         opciones3.add(opcion3_4);
-        
     	Flow_207242381_MunozAraya flujo3 = new Flow_207242381_MunozAraya(3, "¿Que tipo de pelicula?", opciones3);
         chatbot1.ChatbotAddFlow(flujo3); 
-        
-        
-        Option_207242381_MunozAraya opcion4_1 = new Option_207242381_MunozAraya(1, "Shooter", 1, 4);
+
+        Option_207242381_MunozAraya opcion4_1 = new Option_207242381_MunozAraya(1, "Shooter", 1, 5);
         opcion4_1.addKeywords("Fps", "Disparos", "shooter");
-        Option_207242381_MunozAraya opcion4_2 = new Option_207242381_MunozAraya(2, "Supervivencia", 1, 4);
+        Option_207242381_MunozAraya opcion4_2 = new Option_207242381_MunozAraya(2, "Supervivencia", 1, 6);
         opcion4_2.addKeywords("survival", "Sobrevivir", "Aventura");
-        Option_207242381_MunozAraya opcion4_3 = new Option_207242381_MunozAraya(3, "Carreras", 1, 4);
+        Option_207242381_MunozAraya opcion4_3 = new Option_207242381_MunozAraya(3, "Carreras", 1, 7);
         opcion4_3.addKeywords("Autos", "Conduccion", "carreras");
         Option_207242381_MunozAraya opcion4_4 = new Option_207242381_MunozAraya(4, "Volver", 1, 2);
         opcion4_4.addKeywords("Volver", "volver", "anterior");
-        
         ArrayList<Option_207242381_MunozAraya> opciones4 = new ArrayList<>();
         opciones4.add(opcion4_1);
         opciones4.add(opcion4_2);
         opciones4.add(opcion4_3);
         opciones4.add(opcion4_4);
-        
     	Flow_207242381_MunozAraya flujo4 = new Flow_207242381_MunozAraya(4, "¿Que tipo de juego?", opciones4);
         chatbot1.ChatbotAddFlow(flujo4);
-        
-        
-        
 
+        Option_207242381_MunozAraya opcion5_1 = new Option_207242381_MunozAraya(1, "Call of duty", 1, 5);
+        opcion5_1.addKeywords("cod", "callofduty");
+        Option_207242381_MunozAraya opcion5_2 = new Option_207242381_MunozAraya(2, "Battlefield", 1, 5);
+        opcion5_2.addKeywords("bf", "battle field");
+        Option_207242381_MunozAraya opcion5_3 = new Option_207242381_MunozAraya(3, "Volver", 1, 4);
+        opcion5_3.addKeywords("Volver", "volver", "anterior");        
+        ArrayList<Option_207242381_MunozAraya> opciones5 = new ArrayList<>();
+        opciones5.add(opcion5_1);
+        opciones5.add(opcion5_2);
+        opciones5.add(opcion5_3);
+    	Flow_207242381_MunozAraya flujo5 = new Flow_207242381_MunozAraya(5, "¿Cual deseas jugar?", opciones5);
+        chatbot1.ChatbotAddFlow(flujo5);
+
+        Option_207242381_MunozAraya opcion6_1 = new Option_207242381_MunozAraya(1, "Minecraft", 1, 6);
+        opcion6_1.addKeywords("mine", "craft");
+        Option_207242381_MunozAraya opcion6_2 = new Option_207242381_MunozAraya(2, "Terraria", 1, 6);
+        opcion6_2.addKeywords("terra", "2d");
+        Option_207242381_MunozAraya opcion6_3 = new Option_207242381_MunozAraya(2, "Ark", 1, 6);
+        opcion6_3.addKeywords("ark survival", "dinosaurios");
+        Option_207242381_MunozAraya opcion6_4 = new Option_207242381_MunozAraya(3, "Volver", 1, 4);
+        opcion6_4.addKeywords("Volver", "volver", "anterior");        
+        ArrayList<Option_207242381_MunozAraya> opciones6 = new ArrayList<>();
+        opciones6.add(opcion6_1);
+        opciones6.add(opcion6_2);
+        opciones6.add(opcion6_3);
+        opciones6.add(opcion6_4);
+    	Flow_207242381_MunozAraya flujo6 = new Flow_207242381_MunozAraya(6, "¿Cual deseas jugar?", opciones6);
+        chatbot1.ChatbotAddFlow(flujo6);
+
+        Option_207242381_MunozAraya opcion7_1 = new Option_207242381_MunozAraya(1, "Need for speed", 1, 7);
+        opcion7_1.addKeywords("speed", "need");
+        Option_207242381_MunozAraya opcion7_2 = new Option_207242381_MunozAraya(2, "Forza", 1, 7);
+        opcion7_2.addKeywords("forsa", "forza horizon", "forza motosport");
+        Option_207242381_MunozAraya opcion7_3 = new Option_207242381_MunozAraya(3, "Mario kart", 1, 7);
+        opcion7_3.addKeywords("mario", "kart");
+        Option_207242381_MunozAraya opcion7_4 = new Option_207242381_MunozAraya(4, "Volver", 1, 4);
+        opcion7_4.addKeywords("Volver", "volver", "anterior");        
+        ArrayList<Option_207242381_MunozAraya> opciones7 = new ArrayList<>();
+        opciones7.add(opcion7_1);
+        opciones7.add(opcion7_2);
+        opciones7.add(opcion7_3);
+        opciones7.add(opcion7_4);
+    	Flow_207242381_MunozAraya flujo7 = new Flow_207242381_MunozAraya(7, "¿Cual deseas jugar?", opciones7);
+        chatbot1.ChatbotAddFlow(flujo7);
+
+        Option_207242381_MunozAraya opcion8_1 = new Option_207242381_MunozAraya(1, "IT", 1, 8);
+        opcion8_1.addKeywords("payaso", "i.t.");
+        Option_207242381_MunozAraya opcion8_2 = new Option_207242381_MunozAraya(2, "El conjuro", 1, 8);
+        opcion8_2.addKeywords("conjuro");
+        Option_207242381_MunozAraya opcion8_3 = new Option_207242381_MunozAraya(3, "El exorcista", 1, 8);
+        opcion8_3.addKeywords("exorcista", "exocismo");
+        Option_207242381_MunozAraya opcion8_4 = new Option_207242381_MunozAraya(4, "Volver", 1, 3);
+        opcion8_4.addKeywords("Volver", "volver", "anterior");        
+        ArrayList<Option_207242381_MunozAraya> opciones8 = new ArrayList<>();
+        opciones8.add(opcion8_1);
+        opciones8.add(opcion8_2);
+        opciones8.add(opcion8_3);
+        opciones8.add(opcion8_4);
+    	Flow_207242381_MunozAraya flujo8 = new Flow_207242381_MunozAraya(8, "¿Cual deseas ver?", opciones8);
+        chatbot1.ChatbotAddFlow(flujo8);
+
+        Option_207242381_MunozAraya opcion9_1 = new Option_207242381_MunozAraya(1, "El señor de los anillos", 1, 9);
+        opcion9_1.addKeywords("esdla", "tlotr", "anillos", "el señor");
+        Option_207242381_MunozAraya opcion9_2 = new Option_207242381_MunozAraya(2, "Las cronicas de Narnia", 1, 9);
+        opcion9_2.addKeywords("narnia", "lcdn", "las cronicas");
+        Option_207242381_MunozAraya opcion9_3 = new Option_207242381_MunozAraya(3, "Harry Potter", 1, 9);
+        opcion9_3.addKeywords("HP", "harry", "potter");
+        Option_207242381_MunozAraya opcion9_4 = new Option_207242381_MunozAraya(4, "Volver", 1, 3);
+        opcion9_4.addKeywords("Volver", "volver", "anterior");        
+        ArrayList<Option_207242381_MunozAraya> opciones9 = new ArrayList<>();
+        opciones9.add(opcion9_1);
+        opciones9.add(opcion9_2);
+        opciones9.add(opcion9_3);
+        opciones9.add(opcion9_4);
+    	Flow_207242381_MunozAraya flujo9 = new Flow_207242381_MunozAraya(9, "¿Cual deseas ver?", opciones9);
+        chatbot1.ChatbotAddFlow(flujo9);
+
+        Option_207242381_MunozAraya opcion10_1 = new Option_207242381_MunozAraya(1, "Transformers", 1, 10);
+        opcion10_1.addKeywords("esdla", "tlotr", "anillos", "el señor");
+        Option_207242381_MunozAraya opcion10_2 = new Option_207242381_MunozAraya(2, "Los Vengadores", 1, 10);
+        opcion10_2.addKeywords("vengadores", "lv", "avengers");
+        Option_207242381_MunozAraya opcion10_3 = new Option_207242381_MunozAraya(3, "Interestelar", 1, 10);
+        opcion10_3.addKeywords("interstellar");
+        Option_207242381_MunozAraya opcion10_4 = new Option_207242381_MunozAraya(4, "Volver", 1, 3);
+        opcion10_4.addKeywords("Volver", "volver", "anterior");        
+        ArrayList<Option_207242381_MunozAraya> opciones10 = new ArrayList<>();
+        opciones10.add(opcion10_1);
+        opciones10.add(opcion10_2);
+        opciones10.add(opcion10_3);
+        opciones10.add(opcion10_4);
+    	Flow_207242381_MunozAraya flujo10 = new Flow_207242381_MunozAraya(10, "¿Cual deseas ver?", opciones10);
+        chatbot1.ChatbotAddFlow(flujo10);
         
-        
+          
         User_207242381_MunozAraya admin = new User_207242381_MunozAraya("admin","admin", true);
         ChatHistory_207242381_MunozAraya chatHistoryAdmin = new ChatHistory_207242381_MunozAraya(admin,mensajesIni); 
         admin.setHistorial(chatHistoryAdmin);
@@ -126,14 +209,12 @@ public class Main{
 	            case 2:
 	        	    int opcionMenu2;
 	        	    do {
-	        	        // Mostrar el menú
 	        	        System.out.println("\n### Sistema de Chatbots - Inicio ###");
 	        	        System.out.println("1. Registrar usuario normal");
 	        	        System.out.println("2. Registrar usuario administrador");
 	        	        System.out.println("0. Volver");
 	        	        System.out.print("Seleccione una opcion: ");
 	        	        
-	        	        // Leer la opción ingresada por el usuario
 	        	        opcionMenu2 = scanner.nextInt();
 	        	        scanner.nextLine();
 	        	        switch (opcionMenu2) {
@@ -171,12 +252,9 @@ public class Main{
 	        }
 	    } while (opcionMenu1 != 1);
 	    
-	    
-	    
-	    
-	    
+    
 	    User_207242381_MunozAraya logedUser = sistema1.obtenerPrimerUsuarioActivo();
-	    if(logedUser.isAdmin()) {//Este menu es exclusivo para un administrador
+	    if(logedUser.isAdmin()) {
 	    	
 		    int opcionMenu3;
 		    do {
@@ -213,7 +291,6 @@ public class Main{
 				        
 				        int opcionMenu5; 
 				        do {
-				            // Mostrar el menú
 				            System.out.println("\n_____Crear flow_____");
 				            System.out.println("1. Crear un nuevo flow");
 				            System.out.println("2. Eliminar un flow");
@@ -221,7 +298,6 @@ public class Main{
 				            System.out.println("0. Salir");
 				            System.out.print("Seleccione una opcion: ");
 				            
-				            // Leer la opción ingresada por el usuario
 				            opcionMenu5 = scanner.nextInt();
 				            scanner.nextLine();
 				            
@@ -246,7 +322,6 @@ public class Main{
 					                    System.out.println("0. Salir");
 					                    System.out.print("Seleccione una opcion: ");
 					                    
-					                    // Leer la opción ingresada por el usuario
 					                    opcionMenu6 = scanner.nextInt();
 					                    scanner.nextLine();
 					                    
@@ -311,8 +386,6 @@ public class Main{
 					                            break;
 					                    }
 					                } while (opcionMenu6 != 0);
-
-					            	//______________________________________________________________________________________
 				                    break;
 				                case 2:
 				                    for(Flow_207242381_MunozAraya flow : newChatbot.getFlows()) {
@@ -339,8 +412,6 @@ public class Main{
 				            }
 				        } while (opcionMenu5 != 0);
 
-				        
-				        
 		                break;
 		            case 2:
 		            	int k = 0;
@@ -422,8 +493,7 @@ public class Main{
 		                break;
 		        }
 		    } while (opcionMenu3 != 0);
-		    scanner.close();
-	    }else {//El usuario no es administrador
+	    }else {
 	    	int opcionMenu3;
 		    do {
 		        System.out.println("\n### Sistema de Chatbots - Inicio ###");
@@ -515,7 +585,6 @@ public class Main{
 		        }
 		    } while (opcionMenu3 != 0);	
 	    }
-	    scanner.close();
-	    
+	    scanner.close(); 
 	}
 }
